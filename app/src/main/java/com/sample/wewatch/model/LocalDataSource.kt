@@ -7,8 +7,8 @@ import kotlin.concurrent.thread
 
 open class LocalDataSource(application: Application) {
 
-  private val movieDao: MovieDao
-  open val allMovies: Observable<List<Movie>>
+  private val movieDao: MovieDao = TODO()
+  open val allMovies: Observable<List<Movie>> = TODO()
 
   init {
     val db = LocalDatabase.getInstance(application)

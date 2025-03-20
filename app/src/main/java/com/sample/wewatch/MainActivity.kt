@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
     }
 
   fun displayMovies(movieList: List<Movie>?) {
-    if (movieList == null || movieList.size == 0) {
+    if (movieList.isNullOrEmpty()) {
       Log.d(TAG, "No movies to display")
       moviesRecyclerView.visibility = INVISIBLE
       noMoviesLayout.visibility = VISIBLE
@@ -114,6 +114,7 @@ class MainActivity : AppCompatActivity() {
     startActivityForResult(myIntent, ADD_MOVIE_ACTIVITY_REQUEST_CODE)
   }
 
+  @Deprecated("Deprecated in Java")
   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
     super.onActivityResult(requestCode, resultCode, data)
     if (requestCode == ADD_MOVIE_ACTIVITY_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
